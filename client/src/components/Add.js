@@ -13,6 +13,7 @@ function Add(props) {
   const dispatch = useDispatch();
   //get notifications from store
   const message = useSelector(state => state.post.notification);
+  console.log(message)
   //check if post variable passed from component (in case when we edit post)
   const post = props.location.state ? props.location.state.post : "";
   //if post passed, than get id and description
@@ -41,6 +42,7 @@ function Add(props) {
       topic,
       description: JSON.stringify(convertToRaw(editorState.editorState.getCurrentContent())),
     };
+    console.log(convertToRaw(editorState.editorState.getCurrentContent()))
     //dispatches addPost action 
     dispatch(addPost(newPost));
   }

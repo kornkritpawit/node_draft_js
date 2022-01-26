@@ -3,6 +3,7 @@ import { SHOW_ALL_POSTS, NOTIFICATION } from "./types";
 
 // Add post
 export const addPost = (postData) => dispatch => {
+  console.log(postData)
   axios
     .post("/api/add", postData) //add route endpoint we made in server.js
     .then(res => {
